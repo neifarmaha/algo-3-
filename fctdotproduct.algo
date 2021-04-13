@@ -1,0 +1,32 @@
+FUNCTION dot_product(v1,v2 : ARRAY_OF INTEGER) : INTEGER
+VAR
+    i,j,n,m,ps:INTEGER
+BEGIN
+     n:=v1.length-1;
+    m:=v2.length-1;
+    ps:=0;
+    IF (n <> m) THEN
+        write("you acn't calculate the dot product of 2 vectors have different length")
+    END_IF
+    FOR i FROM 0 TO n STEP 1  DO
+        ps:=ps + v1[i] * v2[i]
+    END_FOR
+    RETURN ps ;
+END
+
+
+ ALGORITHM orth_vectors 
+VAR
+    i,j,ps:INTEGER;
+    v1: ARRAY_OF ARRAY;
+    
+BEGIN
+    FOR i FROM 0 TO v.length-1 STEP 1  DO
+        FOR j FROM 0 TO v.length-1 STEP 1  DO
+            ps:= dot_product(v[i],v[j])
+            IF (ps = 0) THEN
+                write(v[1], " and " , v[j] " are orthogonal ")
+            END_IF
+        END_FOR
+    END_FOR
+END
